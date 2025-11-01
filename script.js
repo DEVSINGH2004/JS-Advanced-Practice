@@ -175,3 +175,95 @@ let discount = calc(10);
 console.log(discount(500)); 
 
 
+
+// ARRAYS - NON PRIMITIVE DATATYPE 
+
+let arr = [1,21,34,56];
+console.log(arr);
+arr[1] = 10;
+console.log(arr[3]);
+console.log(arr);
+
+arr.push(21); // last element index
+arr.push(21); // last element index
+arr.shift(); // removes first element in arr
+arr.unshift(9); // adds first element in arr
+arr.splice(2,1) // removes elemnt from specified index 
+let newarr = arr.slice(0,3); // gives new arr from exisitng arr from specified index to index
+arr.pop(21)
+arr.reverse(); // reverse an array
+let sr = arr.sort(function(a,b){
+    return b-a;
+})
+console.log(sr);
+console.log(arr)
+
+
+//Foreach
+
+arr.forEach(function(val){
+    console.log(val);
+})
+
+// map - we use it to make new arr from exisiting arr as the no. of elements will be same in both arrays
+
+let arr2 = arr.map(function(val){
+    return 1;
+})
+
+console.log(arr2)
+
+//filter - makes new arr from old arr on the basis of a condition
+
+let arr3 = arr.filter(function(val){
+    if(val>4) return val;
+})
+
+console.log(arr3);
+
+//REDUCE - REDUCES AN ARRAY INTO A SINGLE VALUE AFTER DOING SOME OPERATION
+let result = arr.reduce(function(ans,val){
+    return ans+val;
+},0)
+
+console.log(result)
+
+let va = arr.find(function(val){
+    return val === 21;
+})
+
+console.log(va);
+
+let any = arr.some(function(val){
+    return val >30;
+})
+
+console.log(any);
+
+let ev = arr.every(function(val){
+    return val >5;
+})
+
+console.log(ev);
+
+//destructuring in array
+
+let [x,y, ,z] = arr;
+
+
+let arr4 = [...arr]; // this gives exact copt of arr instead of its reference 
+console.log(arr4) 
+
+let colors = ["green","blue"];
+colors.splice(1,0,"red","green");
+console.log(colors);
+
+let country = ["usa","america"];
+country = ["India",...country];
+console.log(country);
+
+
+
+
+
+
