@@ -262,7 +262,71 @@ let country = ["usa","america"];
 country = ["India",...country];
 console.log(country);
 
+// Objects - non primitive ds jo key value pair me values rakhta h 
 
+let obj = {
+    Name:"dev singh",
+    Age:20,
+    Gender:"male",
+    location :  {
+        lat : 22.17,
+        long:22
+    },
+}
+
+console.log(obj.Name);
+
+let aa = "Name";
+console.log(obj[aa]);
+
+console.log(obj.location.lat,obj.location.long); // nesting object - object me object
+
+// object destructuring
+
+let {lat,long} = obj.location;
+
+console.log(lat);
+
+//loops in object ds
+
+//1. for in
+for(let key in obj){
+    console.log(obj[key]); // bracket isiliye lagaya kyuki we r accessing values through a variable
+}
+
+//2. object.keys - jmakes an arr of keys of an object
+
+console.log(Object.keys(obj));
+
+//3. object.entries - tells how may entries r there in ur object
+
+console.log(Object.entries(obj));
+
+let obj2 = {...obj}; // copying obj in obj2 without reference
+
+let obj3 = Object.assign({Phone : 9811},obj); // will give exact copy of obj to obj3 with extra field 
+
+console.log(obj3);
+
+//deep clone -  used when u have to copy a nested object as if u dont then only values outside of nested brackets will give exact copy and reference of values inside of nested bracket will be given to new obj.
+
+let obj4 =  JSON.parse(JSON.stringify(obj)); //  this will make exact copy of obj even of nested values
+obj4.location.lat = 1234;
+console.log(obj4);
+console.log(obj);
+
+//optional chaining in object
+
+console.log(obj?.Phone); // will give undefined instead of error even when there is no key named Phone.
+
+let { "Name" : naam } = obj; // in this it will give the value to var naam 
+
+console.log(naam);
+
+Object.entries(obj).forEach(function(val){
+    console.log(val);
+})
+    
 
 
 
